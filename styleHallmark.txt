@@ -1,0 +1,55 @@
+
+
+article.elementor-post {
+     border-radius:5PX;
+     display: flex;
+     justify-content: center;
+     align-item: center;
+     align-content: center;
+     align-items: center;
+     box-shadow: 1px 1px  5px #5b5b5b4f;
+     border:1px solid #8b8b8b;
+     
+}
+article.elementor-post:hover {  
+     transform:
+     scale(1.05);
+     transition:.1s;
+    border-radius:5PX;
+/*     border:0.2px solid lightgreen; */
+    border:1px solid #61CE7D;
+     
+    
+}
+ article.elementor-post img {
+    width:120% !important;
+    
+  
+}
+ article.elementor-post:hover img {
+     width:100% !important;
+     transition:.1s
+     
+  
+}
+article.elementor-post .elementor-post__text{
+      transform:scale(1.05);
+      width: 86%;
+      
+      
+    
+}
+article.elementor-post:hover .elementor-post__text{
+           transform:scale(1);
+         width: 86%;
+         transition:.1s;
+         margin-top:-5px
+    
+}
+
+/* article.elementor-post:hover .elementor-post__title, .elementor-post__meta-data, .elementor-post-date, .elementor-post__excerpt p , .elementor-post__read-more:hover{
+     transform: !important;
+
+     
+    
+} */

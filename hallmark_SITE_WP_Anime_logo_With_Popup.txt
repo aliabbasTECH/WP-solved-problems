@@ -1,0 +1,92 @@
+.elementor-widget-wrap.elementor-element-populated {
+    position: relative;
+}
+
+.elementor-element.elementor-element-3babcfe.elementor-widget__width-auto.elementor-widget.elementor-widget-image {
+    position: absolute;
+    top: 60px;
+    -webkit-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+    -webkit-animation: mymove 3.5s ease-in-out forwards infinite;
+    animation: mymove 3.5s ease-in-out forwards infinite;
+   
+    
+    
+}
+
+@keyframes mymove {
+
+0% {
+    transform: rotate(10deg);
+}
+50% {
+    transform: rotate(-5deg);
+}
+100% {
+    transform: rotate(10deg);
+}
+}
+
+
+
+
+New animation responsive
+________+++++++++++___________+++++++++++++________________++++++++++
+
+
+.elementor-widget-wrap.elementor-element-populated {
+   position:relative ;
+}
+
+.elementor-element.elementor-element-3babcfe.elementor-widget__width-auto.elementor-widget.elementor-widget-image {
+    width:85%;
+    position:absolute ;
+    right:44%;
+    top:80%;
+    -webkit-transform-origin: 50% 0 ; /*for other browsers*/
+    transform-origin: 50% 0%;         /*for chrome browser*/
+    -webkit-animation: mymove 3.5s ease-in-out forwards infinite;
+    animation: mymove 3.5s ease-in-out forwards infinite;  
+}
+
+@keyframes mymove {
+
+0% {
+    transform: rotate(10deg);
+}
+50% {
+    transform: rotate(-5deg);
+}
+100% {
+    transform: rotate(10deg);
+}
+}
+
+
+
+
+______________________________________________popuo btn css____________
+
+
+
+
+.bec_amb_pop .elementor-form-fields-wrapper.elementor-labels-above {
+    position:relative;
+    width:100%;
+   
+}
+
+.bec_amb_pop .elementor-column{
+     display:flex !important;
+    flex-direction: row !important;
+     width:55%;
+     justify-content:start;  
+
+}
+.bec_amb_pop .elementor-field-type-textarea{
+    width:50%;
+    position:absolute;
+    top:0px;
+    right:-30px
+    
+}

@@ -1,0 +1,23 @@
+.img_txt span.premium-gallery-img-name {
+    background-image: linear-gradient(#f6c09e 100%,#f6c09e 0);
+    background-position: 50% 100%,bottom;
+    background-repeat: no-repeat;
+    background-size: 100% 0;
+    border-bottom: 0.2rem inset #f1823d;
+    color: #333;
+    padding: 0.2rem 0.3rem;
+    text-decoration: none;
+    transform-origin: bottom;
+    transition: background-size .4s cubic-bezier(.19,1,.5,1),border-color .2s cubic-bezier(.19,1,.5,1) .05s,color .2s cubic-bezier(.19,1,.5,1) .05s;
+
+}
+.img_txt span.premium-gallery-img-name:hover{
+    background-size: 100% 100%;
+    border-bottom-color: #333;
+}
+
+/* .img_txt span.premium-gallery-img-name:hover {
+    width:100%; 
+    border-bottom: solid black;
+    background-size: 100% 100%;
+} */

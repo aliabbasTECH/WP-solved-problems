@@ -1,0 +1,84 @@
+.progress-bar {
+  position: relative;
+  display: inline-block;
+  height: 400px;
+  width: 200px;
+  background: linear-gradient(to bottom, #8fe4bf 99.9%, transparent 99.9%), radial-gradient(circle at 50% 50%, #8fe4bf 25%, transparent 30%);
+  background-position: 50% 0%, 50% 0%;
+  background-size: 5px 100%, 50px 50px;
+  /* 5px is the thickness of the bar, 50px is 1/8th of the height */
+  
+  background-repeat: no-repeat, repeat-y;
+}
+
+/* .progress-now {
+  position: absolute;
+  width: 100%;
+  background: linear-gradient(to bottom, #00b164 99.9%, transparent 99.9%), radial-gradient(circle at 50% 50%, #00b164 25%, transparent 30%);
+  background-position: 50% 0%, 50% 0%;
+  background-size: 5px 100%, 50px 50px;
+  background-repeat: no-repeat, repeat-y;
+  z-index: 1;
+}
+
+.progress-now.bottom {
+  bottom: 0px;
+  background-position: 50% 100%, 50% 100%;
+} */
+
+.progress-bar-vertical {
+  position:relative  ;
+  display: inline-block;
+  
+  height: 100%;
+  width: 350px;
+  background: linear-gradient(to right, #8fe4bf 99.9%, transparent 99.9%), radial-gradient(circle at 50% 50%, #8fe4bf 25%, transparent 30%);
+  background-position: 0% 50%, -4.7% 50%;
+  background-size: 100% 7px, 50px 60px;
+  /* 5px is the thickness of the bar, 50px is 1/8th of the height */
+  
+  background-repeat: no-repeat, repeat-x;
+}
+
+.progress-now-vertical {
+  position: absolute;
+  height: 100%;
+  background: linear-gradient(to right, #00b164 99.9%, transparent 99.9%), radial-gradient(circle at 50% 50%, #00b164 25%, transparent 30%);
+  background-position: 0% 50%, 0% 50%;
+  background-size: 100% 5px, 50px 50px;
+  background-repeat: no-repeat, repeat-x;
+  z-index: 1;
+}
+
+/* .progress-now-vertical.right {
+  right: 0px;
+  background-position: 100% 50%, 100% 50%;
+} */
+
+.container{
+ 
+  padding: 10px;
+  text-align: center;
+}
+
+
+
+
+_______________________________js________________________
+window.onload = function() {
+  var val = 0,
+    progress = 0;
+
+  function progressBar() {
+    val += 0.005;
+    progress = (val * 50 > 400) ? 400 : val * 50; /* 50 is 1/8th of height, 400 is height */
+    $('.progress-now').attr('style', 'height: ' + progress + 'px');
+    $('.progress-now-vertical').attr('style', 'width: ' + progress + 'px');
+    if (val > 8) val = 0;
+    anim = window.requestAnimationFrame(progressBar);
+  }
+
+  progressBar();
+}
+
+

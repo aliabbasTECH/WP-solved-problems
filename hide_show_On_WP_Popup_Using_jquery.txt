@@ -1,0 +1,35 @@
+7_27_2022 frobookcover site
+
+_________________________________________________________________try to run script on popup__________________________
+jQuery(document).ready(function(){     
+jQuery(document).on('elementor/popup/show', () => {     // this will work with elementor when elementor popup trigers 
+jQuery("#form-field-field_49a9a31").change(function(){
+        jQuery(this).find("option:selected").each(function(){
+            var optionValue = jQuery(this).attr("value");
+            if(optionValue == "Amazon KDP" ){
+                jQuery(".elementor-field-group-field_f28bbec,.elementor-field-group-amazon").show();
+                jQuery(".elementor-field-group-field_3d93781,.elementor-field-group-barnes").hide();
+                jQuery(".elementor-field-group-field_c58fb19,.elementor-field-group-ingram").hide();
+            } else if(optionValue == "Barnes & Nobles"){
+                jQuery(".elementor-field-group-field_3d93781,.elementor-field-group-barnes").show();
+                jQuery(".elementor-field-group-field_f28bbec,.elementor-field-group-amazon").hide();
+                jQuery(".elementor-field-group-field_c58fb19,.elementor-field-group-ingram").hide();
+            }else if(optionValue == "Ingram Spark"){
+                jQuery(".elementor-field-group-field_c58fb19,.elementor-field-group-ingram").show();
+                jQuery(".elementor-field-group-field_f28bbec,.elementor-field-group-amazon").hide();
+                jQuery(".elementor-field-group-field_3d93781,.elementor-field-group-barnes").hide();
+            }else{
+                jQuery(".elementor-field-group-field_f28bbec,.elementor-field-group-amazon").hide();
+                jQuery(".elementor-field-group-field_3d93781,.elementor-field-group-barnes").hide();
+                jQuery(".elementor-field-group-field_c58fb19,.elementor-field-group-ingram").hide();
+            }
+        });
+    }).change();
+});
+
+});
+
+
+
+
+
