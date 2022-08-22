@@ -1,0 +1,20 @@
+ if(jQuery(this).attr("opt")){
+          jQuery('.contries-header').val(jQuery(this)..attr("opt")).trigger('change');
+        }
+        else{
+          jQuery('.contries-header').val(jQuery(this).text()).trigger('change');
+        }
+
+
+/////____________________________________
+
+
+jQuery('.contries-select-opt span').click(function(){
+        if(jQuery(this).attr("opt")){
+          jQuery('.contries-header').val(jQuery(this)..attr("opt")).trigger('change');
+        }
+        else{
+          jQuery('.contries-header').val(jQuery(this).text()).trigger('change');
+        }
+        jQuery('.contries-select-opt').hide();
+    });

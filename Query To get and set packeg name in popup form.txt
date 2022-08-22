@@ -1,0 +1,51 @@
+jQuery(".ebook_popp_trigger .pakeg_card").click(function(){
+    var vl= "basic";
+    if(jQuery(this).hasClass("basic")){
+        vl= "basic";
+    }
+    else if(jQuery(this).hasClass("standard")){
+         vl= "standard";
+    }
+    else{
+        vl= "premium";
+    }
+    setTimeout(function(){
+         jQuery('.ebook_popp input[name="form_fields[package_name]"]').val(vl);
+    }, 500)
+    
+});
+
+jQuery(".printable_cov_popp_trigger .pakeg_card").click(function(){
+    var vl= "basic";
+    if(jQuery(this).hasClass("basic")){
+        vl= "basic";
+    }
+    else if(jQuery(this).hasClass("standard")){
+         vl= "standard";
+    }
+    else{
+        vl= "premium";
+    }
+    setTimeout(function(){
+         jQuery('.printable_cover input[name="form_fields[package_name_pc]"]').val(vl);
+    }, 500)
+    
+});
+
+
+jQuery(".cover_conv_popp_trigger .pakeg_card").click(function(){
+    var vl= "basic";
+    if(jQuery(this).hasClass("basic")){
+        vl= "basic";
+    }
+    else if(jQuery(this).hasClass("standard")){
+         vl= "standard";
+    }
+    else{
+        vl= "premium";
+    }
+    setTimeout(function(){
+         jQuery('.cover_converson input[name="form_fields[package_name_cc]"]').val(vl);
+    }, 500)
+    
+});

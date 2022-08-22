@@ -1,0 +1,117 @@
+jQuery(document).ready(function (){
+    jQuery(".calculate_btn").click(function(){
+        var input1= jQuery("#input_1").val();
+	var input2= jQuery("#input_2").val();
+	var input3= jQuery("#input_3").val();
+	var input4= jQuery("#input_4").val();
+	var input5= jQuery("#input_5").val();
+	var input6= jQuery("#input_6").val();
+	var input7= jQuery("#input_7").val();
+
+        var Rate1= jQuery("#rate_1").text();
+	var Rate2= jQuery("#rate_2").text();
+	var Rate3= jQuery("#rate_3").text();
+	var Rate4= jQuery("#rate_4").text();
+	var Rate5= jQuery("#rate_5").text();
+	var Rate6= jQuery("#rate_6").text();
+	var Rate7= jQuery("#rate_7").text();
+
+        var total1=input1*Rate1;
+        var total2=input2*Rate2;
+        var total3=input3*Rate3;
+        var total4=input4*Rate4;
+        var total5=input5*Rate5;
+        var total6=input6*Rate6;
+        var total7=input7*Rate7;
+	
+        var totalall = total1+total2+total3+total4+total5+total6+total7;
+
+        jQuery("#amount_1").text(total1.toFixed(2));
+	jQuery("#amount_2").text(total2.toFixed(2));
+	jQuery("#amount_3").text(total3.toFixed(2));
+	jQuery("#amount_4").text(total4.toFixed(2));
+	jQuery("#amount_5").text(total5.toFixed(2));
+	jQuery("#amount_6").text(total6.toFixed(2));
+	jQuery("#amount_7").text(total7.toFixed(2));
+	jQuery(".total_amount").text(totalall.toFixed(2));
+    });
+
+    jQuery(".clear_btn").click(function(){
+    jQuery(".calculator").val(" ");
+    jQuery(".cal_amount").text(" ");
+    jQuery(".total_amount").text("");
+    });
+
+
+});
+
+
+
+
+_______________________________________________________________________________________
+
+
+
+<script>
+        jQuery(document).read(function(){
+            jQuery(".calculator").on('keyup',function(){
+                var total = jQuery(this).val() * jQuery(this).closest('.wptb-row').find('.rate').text() ;
+                jQuery(this).closest('.wptb-row').find(".cal_amount").text(total.toFixed(2));
+                sumAll();
+            });
+            
+            function sumAll(){
+                var sum= 0;
+                jQuery(".cal_amount").each(function(i, v){
+                     var total = parseFloat(jQuery(this).text());
+                     if(total != NaN){
+                      sum+=total || 0.00;         
+                     }         
+                })
+                jQuery(".total_amount").text(sum.toFixed(2));     
+            }
+            
+            jQuery(".calculate_btn ").click(function(){
+                sumAll();
+            });
+            
+               
+            jQuery(".clear_btn").click(function(){
+                jQuery(".calculator").val(" ");
+                jQuery(".cal_amount").text(" ");
+                jQuery(".total_amount").text("");
+                }); 
+        });
+        </script>
+
+
+_______________________________________________with-Out Scriptag
+
+
+jQuery(".calculator").on('keyup',function(){
+                var total = jQuery(this).val() * jQuery(this).closest('.wptb-row').find('.rate').text() ;
+                jQuery(this).closest('.wptb-row').find(".cal_amount").text(total.toFixed(2));
+                sumAll();
+            });
+            
+            function sumAll(){
+                var sum= 0;
+                jQuery(".cal_amount").each(function(i, v){
+                     var total = parseFloat(jQuery(this).text());
+                     if(total != NaN){
+                      sum+=total || 0.00;         
+                     }         
+                })
+                jQuery(".total_amount").text(sum.toFixed(2));     
+            }
+            
+            jQuery(".calculate_btn ").click(function(){
+                sumAll();
+            });
+            
+               
+            jQuery(".clear_btn").click(function(){
+                jQuery(".calculator").val(" ");
+                jQuery(".cal_amount").text(" ");
+                jQuery(".total_amount").text("");
+                }); 

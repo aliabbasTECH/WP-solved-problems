@@ -1,0 +1,56 @@
+
+section.sticky_section{
+  visibility:hidden;
+  top: -110px;
+    transition: .5s !important;
+    position: fixed;
+    width: 100%;
+    Z-INDEX: -99;
+}
+section.shrink{
+  visibility:visible;
+   position: sticky;
+    width: 100%;
+    top: 0px !important;
+    /* transition-delay: 2s; */
+    Z-INDEX: 999;
+}
+
+
+
+
+new
+===========================
+
+section.sticky_section{
+  visibility:hidden;
+  top: -100px;
+  transition: .5s !important;
+  position: fixed;
+  width: 100%;
+  
+}
+section.shrink{
+  visibility:visible;
+    width: 100%;
+    top: 0px !important;
+    /* transition-delay: 2s; */
+    Z-INDEX: 999;
+}
+
+js___________________________________js
+
+
+var shrinkHeader = 200;
+  jQuery(window).scroll(function() {
+    var scroll = getCurrentScroll();
+      if ( scroll >= shrinkHeader ) {
+           jQuery('.sticky_section02').addClass('shrink');
+        }
+        else {
+            jQuery('.sticky_section02').removeClass('shrink');
+        }
+  });
+function getCurrentScroll() {
+    return window.pageYOffset;
+    }

@@ -1,0 +1,118 @@
+.Members_card_201 .bdt-member.bdt-member-skin-default.bdt-transition-toggle {
+    display:flex;
+    flex-direction:column;  
+}
+.Members_card_201 .bdt-member-name,.bdt-member-role, .bdt-member-icons{
+    text-align:center;
+}
+.Members_card_201 .bdt-member-icons{
+    padding-top:0;
+    border:none;
+    margin-top:-20px;
+}
+
+.Members_card_201 .bdt-member-icons a{
+    color:gray;
+    border:1px solid gray;
+    border-radius:50%;
+    padding:10px
+    
+}
+
+
+
+------------------
+
+.header_menue ul#sm-1656581351928354-2 .menu-item-713{
+  margin-top:20px !important ;  
+}
+
+.header_menue ul#sm-1656581351928354-2 .menu-item{
+  margin-left:-15px !important ; 
+  margin-right:10px !important ;
+  margin-bottom:-2px !important; 
+}
+
+
+---------------------------------------
+.comment_singlepost_{
+    padding-left:100px ;
+    padding-right:100px ;
+    padding-top:0px ;
+    padding-bottom:0px ;
+    
+}
+.comment_singlepost_ form{
+    padding:20px;
+    display:flex !important;
+    flex-wrap: wrap;
+    flex-direction:row;
+    justify-content:center;
+    align-content:center;     
+}
+.comment_singlepost_ .comment-textarea{
+     width:100% !important;
+    
+}
+.comment_singlepost_ .comment-form-author{
+    width:50% !important;
+    
+}
+.comment_singlepost_ .comment-form-email{
+    width:50% !important;
+}
+.comment_singlepost_ .comment-form-url{
+    visibility:hidden;
+}
+.comment_singlepost_ .submit{
+    background:red;
+    font-family:lato;
+    font-Size:15px;
+    border-radius:50px;
+    padding:25px;
+    padding-left: 45px;
+    padding-right: 45px;   
+     margin-top:-100px;
+}
+.comment_singlepost_ .comment-form-cookies-consent{
+    margin-top:-60px;
+    
+}
+
+
+.comment_singlepost_  .theme-heading span::before {
+    color:red;
+}
+.comment_singlepost_  .commentmetadata .comment-reply-link {
+    color:red;
+}
+
+
+@media (min-width: 200px) and (max-width: 768px){
+    
+   .comment_singlepost_{
+    padding:10px!important;   
+}
+.comment_singlepost_ form{
+    padding:0px;
+}
+
+.comment_singlepost_ .comment-form-author{
+    width:100% !important;
+    
+}
+.comment_singlepost_ .comment-form-email{
+    width:100% !important;
+}
+}
+ 
+ 
+Lahore Smart City
+
+
+
+Smart city Lahore is the second smart city in Pakistan, giving elegant with advanced standards of living up to dreams along with an ecological and practical luxurious lifestyle. You can now achieve this living concept with the mega real estate project - The Lahore Smart City.
+
+Lahore Smart City is a real estate project that is constructed on an area of 20,000 Kannals. Residents and entrepreneurs both have an equal chance to assist their choice of living a dream without any interruption.
+
+The suburbs of Lahore are populated entirely but soon likely to be settled by the people, who desire to be a part of the World’s premium smart housing scheme. Another owing thing for investors to know is that the commercial and residential plots have been launched on the record.
