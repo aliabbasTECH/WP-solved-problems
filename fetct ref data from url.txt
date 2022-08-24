@@ -1,0 +1,62 @@
+___________________________________PHP_____________________________
+
+// (1)  create function named get_meta_function()  and add in admin-ajax.php file using 2 different methods/hooks wp_ajax_nopriv_ is prefix of hook that stored in admin-ajax.  
+	1) add_action('wp_ajax_nopriv_getRefData', 'get_meta_function');  |This hook allows you to create custom handlers for your own custom AJAX requests.
+ 	2) add_action('wp_ajax_getRefData', 'get_meta_function')  |  This hook is functionally the same as wp_ajax_(action), however it is used to handle AJAX requests on the front-end for unauthenticated users
+       follow the link : to understand these two files:  https://jaydeepchauhanblog.wordpress.com/2017/07/14/wordpress-main-different-between-wp_ajax-and-wp_ajax_nopriv/
+
+// (2) we created get_meta_function() function get post meta_data from where ref id is match only get that spacific data 
+// (3) cretate $cc_query  variabe  and stored post data in array using get_post method that wordpress provider 
+// (4) this we get from jquery Ajax function to match the spacific ref and show only that spacific data 
+// (5) created $data variable and using get_post_meta() that is wordpress provided functoin , to get post meta data of ID      
+// (6) then we create $senddata variable and store array format data 1 is "code" and other is "ref" 
+// (7) in code we get refrel-code from $data variable    
+// (8) in ref  we get name from $cc_query variable 
+// (9) then return  throw print_r() php method in json formet using Json_encode() method that PHP provides 
+// then exit(); 
+
+add_action('wp_ajax_nopriv_getRefData', 'get_meta_function'); //create function 
+add_action('wp_ajax_getRefData', 'get_meta_function');
+
+function get_meta_function(){                              // (2)
+	
+	$cc_query = get_posts(array(                       // (3)
+		'post_type'        => 'referral-codes', 
+		'meta_key'         => 'referral-code',
+		'meta_value'       =>  $_GET['ref']        // (4)
+	));
+	$data= get_post_meta($cc_query[0]->ID);            // (5) 
+    $senddata=([                                           // (6)
+		'code'=> $data['referral-code'][0],        // (7)
+		'ref'=> $cc_query[0]->post_title           // (8)
+  	]);
+	print_r (json_encode($senddata));                  // (9)  
+	exit();
+}
+
+_____________________________________________JQuery_______________
+
+// (1) get current url from loading window
+// (2) this is the method that apply many functionality on url to find, delete,update,get replace etc 
+// (3) this is get method to get only that url who has ref and also ref parem data  
+// (4) this is AJAX GET function that get admin-ajax.php files functions/or action  through link that provided 
+// (5) in action perameter we get function that we created in function.php file & add  in Admin-ajax file 
+// (6) in ref variable send url's ref parem data there the ref id from url "https://maprepcenter.com/ref=imran2231 "
+// (7) and in function there is msg perm that gets data from getRefData function we created in function.php file   
+// (8) we create data variable in js and parse msg data in JSON format to use data in object form  
+// (9) and then show data in input using jquery 
+
+
+let url = new URL(window.location.href);// (1)
+let searchParams = new URLSearchParams(url.search); // (2)
+url= searchParams.get('ref'); // (3)
+if(url != null ){
+  jQuery.get('https://maprepcenter.com/wp-admin/admin-ajax.php',{'action': 'getRefData', 'ref': url },  // (4)(5)(6)(7)
+   function (msg) { 
+        var data = jQuery.parseJSON(msg); //(8)
+         jQuery('input.wpforms-field-large[name="wpforms[fields][10]"]').val(data.ref) //(9)
+               
+});  
+}else{
+    console.log("referral link is wrong or expired"); 
+}
