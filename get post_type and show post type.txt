@@ -1,0 +1,23 @@
+//____________________________________function to get post_type data____
+
+add_shortcode('user_Report', 'user_Report');
+
+function user_Report($data){ 
+	$post= array("post_type"=> "Users_details");
+	$postTitle = get_posts($post);
+	$postMeta = get_post_meta($postTitle[0]->ID);
+    if($data['data'] != '0'){
+        
+	    echo $postMeta[$data['data']][0];
+	}
+	else{
+		print_r($postTitle[0]->post_title) ;
+	}
+}
+
+
+//__________________________TXT file
+
+to show that in elementor or any theam that suport shortCode 
+
+[user_Report data=""] the text to show spacifice data 
