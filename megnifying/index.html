@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+    #magnifying_area{
+       width: 800px;
+       height: 500px;
+       overflow: hidden;
+       border: 3px solid #fff;
+       position: relative;
+    }
+    #magnifying_img{
+       max-width: 100%;
+       min-width: 100%;
+       position: absolute ;
+       left: 50%;
+       top: 50%;
+       transform: translate(-50%,-50%) scale(1);
+       pointer-events: none;
+    }
+    </style>
+    
+   <div id="magnifying_area" >
+     <img id="magnifying_img"   src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" alt="">
+   </div>
+
+   <div class="ali">this is ali</div>
+
+
+<!-- <script src="./main.js"></script> -->
+<script src="./jquery.js"></script>
+
+   <script>
+//     $(document).ready(function(){
+//     $(".ali").click(function(){
+//            alert("ali");
+//     });
+//     $("#magnifying_area").mousemove(function (e) { 
+//         // values: e.clientX, e.clientY, e.pageX, e.pageY
+//         clientX= event.clientX - this.offsetLeft;
+//         clientY= event.clientY - this.offsetTop;
+//         mWidth = this.offsetWidth;
+//         mHeight =this.offsetHeight;
+//         clientX = clientX / mWidth * 100;
+//         clientY = clientY / mHeight *100;
+//         $("#magnifying_img").css({"transform":`translate(-${clientX}%,-${clientY}%) scale(2)`});
+//     });
+//     $("#magnifying_area").mouseleave(function () { 
+//         $("#magnifying_img").css("transform","translate(-50%,-50%) scale(1)" );
+//     });
+
+// });
+
+   </script>
+</body>
+</html>
