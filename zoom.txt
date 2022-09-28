@@ -1,0 +1,46 @@
+css________________________________
+
+img.wp-post-image {
+       max-width: 100%;
+       min-width: 100%;
+       position: absolute ;
+       top: 50%;
+       left: 50%;
+       transform: translate(-50%,-50%) scale(1)   ;
+       pointer-events: none;   
+}
+
+.zoomWrapper {
+    width: 500px !important;
+    height: 500px !important;
+    overflow: hidden;
+    position: relative;
+}
+
+
+
+
+
+
+
+
+
+JS__________________________
+
+
+jQuery(document).ready(function(){
+    jQuery(".zoomWrapper").mousemove(function (e) { 
+        // values: e.clientX, e.clientY, e.pageX, e.pageY
+        clientX= event.clientX - this.offsetLeft;
+        clientY= event.clientY - this.offsetTop;
+        mWidth = this.offsetWidth;
+        mHeight = this.offsetHeight;
+        clientX = clientX / mWidth * 90;
+        clientY = clientY / mHeight * 95;
+        jQuery(".wp-post-image").css({"transform":`translate(-${clientX}%,-${clientY}%) scale(2)`});
+    });
+    jQuery(".zoomWrapper").mouseleave(function () { 
+        jQuery(".wp-post-image").css("transform","translate(-50%,-50%) scale(1)" );
+    });
+
+});
